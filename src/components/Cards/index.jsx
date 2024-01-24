@@ -1,43 +1,44 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "./index.css"
 
 export default function Cards(){
 
-    const [movie,setMovie] = useState()
+    const [movies,setMovies] = useState()
+    const [poster,setPoster] = useState()
+    const image_path = "https://image.tmdb.org/t/p/w500/"
+
+    useEffect(()=>{
+        const options = {
+            method: 'GET',
+            headers: {
+              accept: 'application/json',
+              Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI1ZGQ3ZDA3YmEyNzQzYmJhZGZkYTM2ODhmZDY4YTUyYiIsInN1YiI6IjY1YjE1MmIyMjc5MGJmMDE3MjU2NTg0YyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.qm7cb_lbam8YdZQbCaWB1234oVqEIxmIxIJxLKqxkmA'
+            }
+          };
+          
+          fetch('https://api.themoviedb.org/3/movie/popular?language=pt-Br&page=1', options)
+            .then(response => response.json())
+            .then(data => {
+                console.log(data.results)
+                setMovies(data.results)}
+    )
+            .catch(err => console.error(err));
+
+    },[])
     
-    const movies = [
-    {
-        title:"Shrek 1",
-        image_url:"https://upload.wikimedia.org/wikipedia/pt/e/e6/Shrek_Poster.jpg"
-
-    },
-    {
-        title:"Shrek 2 ",
-        image_url:"https://upload.wikimedia.org/wikipedia/pt/thumb/7/78/Shrek_2_Poster.jpg/230px-Shrek_2_Poster.jpg"
-    },
-    {
-        title:"Shrek Para Sempre",
-        image_url:"https://d2d7ho1ae66ldi.cloudfront.net/ArquivoTitulos/1d2c1add-7fab-11ea-86d1-1c1bb54b8682/800_Shrek+Forever+After_poster.jpg"
-    }
-
-    ]
 
     return(
-        
         <ul className="movie-list">
             
-            {movies.map(movie=>{
-                return(
-                    <li className="movie-unity">
+            {movies && movies.map((movies) =>(
+                    <li className="movie-unity" key={movies.id}>
                     
-                    <a href="https://www.youtube.com/watch?v=dLHCS6oL7lo" target="blank">
-                        <img src={movie.image_url} alt="é o sherek"></img>
+                    <a className="movie-link" href="https://www.youtube.com/watch?v=dLHCS6oL7lo" target="blank">
+                        <img className="movie-poster" src={`${image_path}${movies.poster_path}`} alt={`Poster de ${movies.title}`}></img>
                     </a>  
-                        <span className="title">{movie.title}</span>
+                        <span className="title">{movies.title}</span>
                     </li>
-                )
-            })   }
-
+            ))}
         </ul>
     )
 }

@@ -12,21 +12,19 @@
     align-items: center;
 }
 
-img{
+.movie-poster{
     width: 200px;
     border: 1px solid white;
     border-radius: 0.5rem;
     margin-bottom: 1rem;
+    transition: all 0.3s;
 }
 
 .title{
     font-size: 150%;
 }
 
-a{
-    transition: all 0.3s;
-}
-
-a:hover{
+.movie-poster:hover{
     transform: scale(1.1);
+    border: none;
 }
