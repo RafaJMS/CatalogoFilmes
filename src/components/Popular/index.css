@@ -4,17 +4,24 @@
     list-style: none;
     column-gap: 3rem;
     row-gap: 4rem;
+    margin-top: 3rem;
 }
 
 .movie-unity{
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: rgba(245, 245, 220, 0.705);
+    padding: 2rem;
+    padding-bottom: 0;
+    max-width: 280px;
+    border-radius: 1rem;
+    text-align: center;
 }
 
 .movie-poster{
     width: 200px;
-    border: 1px solid white;
+    border: 1px solid rgb(0, 0, 0);
     border-radius: 0.5rem;
     margin-bottom: 1rem;
     transition: all 0.3s;
@@ -22,6 +29,7 @@
 
 .title{
     font-size: 150%;
+    padding-bottom: 1rem;
 }
 
 .movie-poster:hover{

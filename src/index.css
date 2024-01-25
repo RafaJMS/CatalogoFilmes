@@ -8,6 +8,10 @@
 }
 
 body{
-  background-color: black;
-  color: aliceblue;
+  background-image: url('https://www.enwallpaper.com/wp-content/uploads/2023/08/desktop-wallpaper-cow-print-cow.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-weight: bold;
+  text-align: center;
 }

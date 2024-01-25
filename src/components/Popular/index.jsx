@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react"
 import "./index.css"
+import { Link } from "react-router-dom"
 
-export default function Cards(){
+
+export default function Trending(){
 
     const [movies,setMovies] = useState()
-    const [poster,setPoster] = useState()
     const image_path = "https://image.tmdb.org/t/p/w500/"
 
     useEffect(()=>{
@@ -28,17 +29,17 @@ export default function Cards(){
     
 
     return(
+        <>
         <ul className="movie-list">
             
             {movies && movies.map((movies) =>(
                     <li className="movie-unity" key={movies.id}>
-                    
-                    <a className="movie-link" href="https://www.youtube.com/watch?v=dLHCS6oL7lo" target="blank">
-                        <img className="movie-poster" src={`${image_path}${movies.poster_path}`} alt={`Poster de ${movies.title}`}></img>
-                    </a>  
+
+                        <Link to={`/detalhes/${movies.id}`}><img className="movie-poster" src={`${image_path}${movies.poster_path}`} alt={`Poster de ${movies.title}`}></img></Link>
                         <span className="title">{movies.title}</span>
                     </li>
             ))}
         </ul>
+        </>
     )
 }

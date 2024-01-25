@@ -1,0 +1,51 @@
+.details-box{
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    background-color: blanchedalmond;
+    gap: 1.5rem;
+    padding: 2rem;
+    border: 2px solid rgb(240, 240, 147);
+    border-radius: 1rem;
+    max-width: 50%;
+}
+.poster{
+    width: 600px;
+    margin: 2rem;
+    border-radius: 2rem;
+}
+
+.movie{
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    
+}
+
+button{
+    background: beige;
+    border: none;
+    cursor: pointer;
+    border-radius: 1rem;
+    color: black;
+    padding: 0.8rem 2rem;
+    margin-top: 1rem;
+    font-size: 100%;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover{
+    background: rgb(189, 189, 171) ;
+}
+
+.details, .release-date{
+    line-height: 160%;
+    margin-bottom: 1rem;
+    font-size: 110%;
+}
+
+.release-date{
+    opacity: 0.5;
+}

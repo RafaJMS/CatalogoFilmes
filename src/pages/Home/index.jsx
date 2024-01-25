@@ -1,5 +1,4 @@
-import Cards from "../../components/Cards"
-import Footer from "../../components/Footer"
+import Trending from "../../components/Popular"
 import Header from "../../components/Header"
 import "./index.css"
  
@@ -8,9 +7,7 @@ import "./index.css"
     return(
         <>
         <div className="movie-box">
-        <h1>Filmes</h1>
-
-        <Cards/>
+        <Trending/>
 
         </div>
         </>
