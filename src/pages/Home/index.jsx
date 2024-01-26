@@ -11,7 +11,7 @@ import { Link } from "react-router-dom"
             <img src={icon} alt="icone do muuvies"></img>
             <div className="home-box">
                 <span className="home-title"> BEM VINDO AO MUUUVIES</span>
-                <span className="home-description">Projeto realizado pelo aluno Rafael Mecenas para conclusão do curso FullStack</span>
+                <span className="home-description">Projeto de catalogo de filmes realizado pelo aluno Rafael Mecenas para conclusão do curso FullStack</span>
             </div>
             
         </div>
