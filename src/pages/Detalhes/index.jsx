@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { useParams } from "react-router"
+import { useNavigate, useParams } from "react-router"
 import "./index.css"
 import { Link } from "react-router-dom"
 
@@ -8,6 +8,7 @@ import { Link } from "react-router-dom"
 export default function Detalhes(){
 
     const { id } = useParams()
+    const navigate = useNavigate()
     const [movie,setMovie] = useState({})
     const image_path = "https://image.tmdb.org/t/p/w500/"
 
@@ -41,6 +42,10 @@ export default function Detalhes(){
 
     },[id])
 
+    function handleBack() {
+        navigate(-1);
+    }
+
 
     return(
         <div>
@@ -55,7 +60,7 @@ export default function Detalhes(){
                 </div>
                 
             </div>
-            <Link to='/'><button>Voltar</button></Link>
+           <button onClick={handleBack} id="voltar">Voltar</button>
         </div>
     )
 }

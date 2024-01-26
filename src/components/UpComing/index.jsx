@@ -3,7 +3,7 @@ import "./index.css"
 import { Link } from "react-router-dom"
 
 
-export default function Popular(){
+export default function UpComing(){
 
     const [movies,setMovies] = useState()
     const image_path = "https://image.tmdb.org/t/p/w500/"
@@ -17,7 +17,7 @@ export default function Popular(){
             }
           };
           
-          fetch('https://api.themoviedb.org/3/movie/popular?language=pt-Br&page=1', options)
+          fetch('https://api.themoviedb.org/3/movie/upcoming?language=pt-BR&page=1&region=BR', options)
             .then(response => response.json())
             .then(data => {
                 console.log(data.results)
@@ -30,7 +30,7 @@ export default function Popular(){
 
     return(
         <>
-        <h1 id="title-page"> Filmes Populares </h1>
+        <h1 id="title-page"> Em Breve </h1>
         <ul className="movie-list">
             
             {movies && movies.map((movies) =>(

@@ -16,18 +16,42 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+    transition: all 0.3s;
+    cursor: pointer;
+    margin-left: 20px;
 }
 
+.title-box:hover{
+    transform: scale(1.1);
+}
 .type-box{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 100%;
-    font-size: 150%;
+    font-size: 110%;
+    
+}
+.header-type:hover{
+    transform: scale(1.2);
+    padding: 0.7rem;
+    background: rgb(189, 189, 171);
+    border-radius: 1rem;
 }
 
+.header-type{
+    transition: all 0.3s;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
 .icone{
     width: 50px;
     margin-right: 0.3rem ;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
 }

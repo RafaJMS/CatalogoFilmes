@@ -5,7 +5,6 @@
     column-gap: 3rem;
     row-gap: 4rem;
     margin-top: 3rem;
-    padding-inline: 3rem;
 }
 
 .movie-unity{
@@ -30,13 +29,7 @@
 
 .title{
     font-size: 150%;
-    
-}
-#title-page{
-    background-color: rgba(0, 0, 0, 0.586);
-    padding: 1rem;
-    margin-inline: 1rem;
-    color: aliceblue;
+    padding-bottom: 1rem;
 }
 
 .movie-poster:hover{
